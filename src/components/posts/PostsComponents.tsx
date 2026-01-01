@@ -1,23 +1,19 @@
 import {getAllPosts} from "@/services/api.service";
+import {IPosts} from "@/model/IPosts";
 
 
 export const PostsComponents = async () => {
-    const posts = await getAllPosts()
+    const posts: IPosts[] = await getAllPosts()
 
     return (
         <div>
             <div>
-                {posts.map((u: {
-                    id: number
-                    userId: number
-                    title: string
-                    body: string
-                }) => (
-                    <div key={u.id}>
-                        <div>{u.id}</div>
-                        <div>{u.userId}</div>
-                        <div>{u.title}</div>
-                        <div>{u.body}</div>
+                {posts.map((p: IPosts) => (
+                    <div key={p.id}>
+                        <div>{p.id}</div>
+                        <div>{p.userId}</div>
+                        <div>{p.title}</div>
+                        <div>{p.body}</div>
                     </div>
                 ))}
 

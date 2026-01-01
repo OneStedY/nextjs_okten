@@ -1,18 +1,14 @@
 import {getAllUsers} from "@/services/api.service";
+import {IUser} from "@/model/IUser";
 
 
 export const UsersComponents = async () => {
-    const users = await getAllUsers()
+    const users: IUser[] = await getAllUsers()
 
     return (
         <div>
             <div>
-                {users.map((u: {
-                    id: number
-                    name: string
-                    username: string
-                    email: string
-                }) => (
+                {users.map((u: IUser) => (
                     <div key={u.id}>
                         <div>{u.id}</div>
                         <div>{u.name}</div>
@@ -20,6 +16,7 @@ export const UsersComponents = async () => {
                         <div>{u.username}</div>
                     </div>
                 ))}
+
 
             </div>
 

@@ -1,19 +1,14 @@
 import {getAllComments} from "@/services/api.service";
+import {IComments} from "@/model/IComments";
 
 
 export const CommentsComponents = async () => {
-    const comments = await getAllComments()
+    const comments: IComments[] = await getAllComments()
 
     return (
         <div>
             <div>
-                {comments.map((u: {
-                    id: number
-                    postId: number
-                    title: string
-                    email:string
-                    body: string
-                }) => (
+                {comments.map((u: IComments) => (
                     <div key={u.id}>
                         <div>{u.id}</div>
                         <div>{u.postId}</div>
