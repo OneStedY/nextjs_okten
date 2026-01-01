@@ -10,7 +10,7 @@ const UserPage:FC<Props> = async ({params}) => {
 
         <div>
             <hr/>
-           user page id {id}
+
             <hr/>
         </div>
     );

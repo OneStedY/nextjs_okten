@@ -1,3 +1,4 @@
+import {PostsComponents} from "@/components/posts/PostsComponents";
 
 const PostPage = () => {
 
@@ -5,7 +6,7 @@ const PostPage = () => {
 
         <div>
             <hr/>
-            Posts page
+            <PostsComponents/>
             <hr/>
         </div>
     );

@@ -1,3 +1,4 @@
+import {CommentsComponents} from "@/components/comments/CommentsComponents";
 
 const CommentsPage = () => {
 
@@ -5,7 +6,7 @@ const CommentsPage = () => {
 
         <div>
             <hr/>
-            Comments page
+            <CommentsComponents/>
             <hr/>
         </div>
     );
