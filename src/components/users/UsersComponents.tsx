@@ -1,28 +1,20 @@
 import {getAllUsers} from "@/services/api.service";
-import {IUser} from "@/model/IUser";
+import Link from "next/link"
+
+export const UsersComponent = async () => {
+     const users =  await getAllUsers()
 
 
-export const UsersComponents = async () => {
-    const users: IUser[] = await getAllUsers()
 
     return (
         <div>
-            <div>
-                {users.map((u: IUser) => (
-                    <div key={u.id}>
-                        <div>{u.id}</div>
-                        <div>{u.name}</div>
-                        <div>{u.email}</div>
-                        <div>{u.username}</div>
-                    </div>
-                ))}
+            {
+                users.map((user) => <div key={user.id}>
+                    <Link href={'/users/' + user.id.toString()}> {user.id} {user.name} </Link>
 
-
-            </div>
-
+                </div>)
+            }
         </div>
     );
 };
-
-
 

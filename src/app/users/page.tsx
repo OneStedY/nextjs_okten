@@ -1,4 +1,5 @@
-import {UsersComponents} from "@/components/users/UsersComponents";
+import {UsersComponent} from "@/components/users/UsersComponents";
+
 
 const UsersPage = () => {
 
@@ -6,7 +7,7 @@ const UsersPage = () => {
 
         <div>
             <hr/>
-            <UsersComponents/>
+            <UsersComponent/>
             <hr/>
         </div>
     );

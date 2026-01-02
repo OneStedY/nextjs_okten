@@ -1,27 +1,19 @@
 import {getAllPosts} from "@/services/api.service";
-import {IPosts} from "@/model/IPosts";
+import Link from "next/link"
 
 
 export const PostsComponents = async () => {
-    const posts: IPosts[] = await getAllPosts()
+    const posts =  await getAllPosts()
+
+
 
     return (
         <div>
-            <div>
-                {posts.map((p: IPosts) => (
-                    <div key={p.id}>
-                        <div>{p.id}</div>
-                        <div>{p.userId}</div>
-                        <div>{p.title}</div>
-                        <div>{p.body}</div>
-                    </div>
-                ))}
-
-            </div>
-
+            {
+                posts.map((post) => <div key={post.id}>
+                    <Link href={'/posts/' + post.id.toString()}> {post.id} {post.title} {post.body} </Link>
+                </div>)
+            }
         </div>
     );
 };
-
-
-
